@@ -1,0 +1,9 @@
+{
+  "name": "redis-proxy",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.17.1",
+    "redis": "^2.8.0"
+  }
+}
