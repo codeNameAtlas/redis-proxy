@@ -7,6 +7,7 @@ Starting out in the root directory. My goal was to keep this project functional 
 
 My app follows this structure:
 
+```
 root/
   index.js   - main app logic
   memory.js  - in memory cache data strucutre with helper methods
@@ -15,6 +16,7 @@ root/
     index.js - start the server 
   test/
     index.js - run tests
+```
 
 # How The Code Works
 
@@ -65,8 +67,8 @@ Overall: About 8 Hours.
 Considerations: Much of this work has been done end of day after work not getting my best mental processing ability. I definitely found myself introducing bugs or struggling with wht I felt were easy changes. I also have not actively been programming so I did come up to speed on many of the requirements quickly.
 
 # Requirements Not Implemented 
-
+```
 Tests - I do plan to do this, but it will require a bit more work/time. 
 Sequnetial Concurrent Processing - Did not research too deeply and chose to omit due to time constraints.
 LRU eviction - Researched but did not implement due to time constraints.
-
+```
