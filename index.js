@@ -20,7 +20,6 @@ client.on('connect', function() {
     console.log('connected');
 });
 
-//assumning a string is curl requested at this endpoint
 //possibly update this to accept url query params
 app.get('/:id', function (req, res) {
   //grab the value from the HTTP GET
@@ -32,12 +31,12 @@ app.get('/:id', function (req, res) {
   //prepare it as an array to pass to redis/localCache
   var redisArr = [key, id];
   console.log("hash worked", redisArr);
-  console.log("cache size", cache.size());
 
   /* CACHE SIZE LOGIC */
   //spec says - The cache capacity is configured in terms of number of keys it retains
   //setting the cache size to 5 - size is connected to unique keys in the cache
-  if (cache.size() === cacheSize ) {
+  var currentCacheSize = cache.size();
+  if (currentCacheSize === cacheSize ) {
     //spec is unclear as to the decision to make when limit is reached
     //if LRU eviction was in place we could read the least recently used keys and delete those keys
     //I'm omitting LRU eviction in this take home due to time constraints and just returning an error message

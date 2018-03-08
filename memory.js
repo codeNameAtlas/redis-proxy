@@ -1,5 +1,5 @@
 //file to write the logic for the localCache memory.js
-
+//instnatiate a local cahce instance
 var Cache = function() {
     var self = this;
     self._cache = {};
@@ -8,11 +8,11 @@ var Cache = function() {
 
     return self;
 };
-
+//expose a cache size method
 Cache.prototype.size = function() {
         return this._size;
 };
-
+//expose a put method that sets the key, value, and expiry time
 Cache.prototype.put = function(key, value, time) {
     var self = this;
 
@@ -24,13 +24,12 @@ Cache.prototype.put = function(key, value, time) {
     self._cache[key] = value;
 
     if (!isNaN(time)) {
-
         self._timeouts[key] = setTimeout(self.del.bind(self, key), time);
     }
 
     ++self._size;
 };
-
+//expose a cache delete method to remove a key when the time expires
 Cache.prototype.del = function(key) {
     var self = this;
 
@@ -45,7 +44,7 @@ Cache.prototype.del = function(key) {
     --self._size;
     return true;
 };
-
+//expose a get method to return value from the cache
 Cache.prototype.get = function(key) {
     var self = this;
 
