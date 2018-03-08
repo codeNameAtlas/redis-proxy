@@ -1,0 +1,6 @@
+#this is just to spin up redis
+
+version: "2"
+services:
+  redis:
+    image: redis
