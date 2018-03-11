@@ -4,9 +4,8 @@ var Cache = require('./cache.js');
 var redis = require("redis");
 var cache = new Cache();
 
-//command line config options with defaults
-//downside is this implementation requires all
-//command line arguments to be passed in a specific order
+//command line config options with defaults. the downside is this implementation
+//requires all command line arguments to be passed in a specific order
 
 var port = process.argv[2] || 6379;
 var host = process.argv[3] || '127.0.0.1';
@@ -53,9 +52,7 @@ app.get('/:id', function (req, res) {
 
     return res.json(localKey)
   }
-  //check to see if the value is in redis
-  //set the value in redis to test my logic
-  //the spec does not call for this file to set a value in redis
+
   //to test my logic, i ran this locally and refreshed a few times: http://localhost:3000/hello
   //it worked: https://cl.ly/2f2u2J3k1z0I
   //client.set(redisArr);
@@ -79,10 +76,10 @@ app.listen(3000);
 //ensure the app is listening
 console.log("on port 3000");
 
-//this must check the local cache - memory.js
-   //is it in memory.js?
+//this must check the local cache - cache.js
+   //is it in cache.js?
    //return it
-//if not in local cache - memory.js
+//if not in local cache - cache.js
 //check if it exists in redis using redis GET
   //if it is in redis
   //store it in the local cache

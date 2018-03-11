@@ -9,5 +9,7 @@
     "nodemon": "^1.17.1",
     "redis": "^2.8.0",
     "string-hash": "^1.1.3"
+  }, "scripts": {
+    "test": "mocha test"
   }
 }
