@@ -1,4 +1,4 @@
-//file to write the logic for the localCache memory.js
+//file to write the logic for the localCache cache.js
 //instnatiate a local cahce instance
 var Cache = function() {
     var self = this;

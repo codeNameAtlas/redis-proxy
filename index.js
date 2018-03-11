@@ -1,6 +1,6 @@
 var app = require('./server/index.js');
 var hash = require('./utils.js');
-var Cache = require('./memory.js');
+var Cache = require('./cache.js');
 var redis = require("redis");
 var cache = new Cache();
 
